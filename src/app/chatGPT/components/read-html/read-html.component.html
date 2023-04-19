@@ -1,0 +1,6 @@
+<div *ngIf="response">
+  <h2>API Response</h2>
+  <pre>{{ response | json }}</pre>
+</div>
+
+<button (click)="sendRequest()">Send Request</button>

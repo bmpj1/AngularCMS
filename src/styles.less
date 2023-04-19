@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+@import '~quill/dist/quill.bubble.css';
+
+/** ESTILOS BASE DE LA WEB **/
+/** Variables globales para los colores de la web: **/
+// Variables de color
+@primary-color: #00ff00; // Color primario
+@secondary-color: rgba(0, 255, 0, 0.8); // Color secundario (verde)
+@tertiary-color: #fb5600; // Color terciario (naranja-rojo: ofertas )
+@highlight-color: #ff2e63; // Color de destacado (rojo: botones de compra)
+@blue: #007bff;
+
+// Variables de fondo
+@bg-color: #FFFFFF; // Fondo de la página web
+@secondary-bg-color: rgba(51, 51, 51, 0.75); // Fondo secundario
+@widget-bg-color: rgba(198, 238, 232); // Fondo de la página web
+@widget-add-color: rgb(203 238 198); // Fondo de la página web
+
+/** GRADIENTES DE LA WEB **/
+// Gradiente original
+@gradient-primary-to-tertiary: linear-gradient(to right, @primary-color, @tertiary-color);
+// Gradiente en dirección opuesta
+@gradient-tertiary-to-primary: linear-gradient(to left, @primary-color, @tertiary-color);
+// Gradiente de arriba a abajo
+@gradient-primary-to-tertiary-vertical: linear-gradient(to bottom, @primary-color, @tertiary-color);
+// Gradiente de abajo a arriba
+@gradient-tertiary-to-primary-vertical: linear-gradient(to top, @tertiary-color, @primary-color);
+// Gradiente diagonal de arriba a la izquierda
+@gradient-primary-to-tertiary-diagonal-up: linear-gradient(to top left, @primary-color, @tertiary-color);
+// Gradiente diagonal de abajo a la derecha
+@gradient-tertiary-to-primary-diagonal-down: linear-gradient(to bottom right, @tertiary-color, @primary-color);

@@ -1,6 +1,21 @@
-# BrianTest
+# TestBrian
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+
+
+# Dependencias
+* Ejecutar esto sólo si no se ha hecho antes en ese proyecto: npm i bootstrap jquery popper.js @fortawesome/fontawesome-free --save
+
+* Comprobar si lo siguiente está agregado al archivo angular.json:
+"styles": [
+  "src/styles.less",
+  "node_modules/bootstrap/dist/less/bootstrap.min.less"
+],
+"scripts": [
+  "node_modules/jquery/dist/jquery.slim.min.js",
+  "node_modules/popper.js/dist/umd/popper.min.js",
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
 
 ## Development server
 
