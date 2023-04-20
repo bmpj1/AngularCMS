@@ -1,0 +1,47 @@
+@import '/src/styles.less';
+
+/* Estilo del borde inferior del menú */
+.border-bottom-nav {
+  max-width: 100%;
+  position: relative;
+  background: @secondary-bg-color;
+  padding-bottom: 4px;
+}
+
+/* Estilo del navbar */
+.navbar {
+  background-color: @secondary-bg-color; /* Fondo de color gris oscuro opaco */
+}
+
+/* Estilos del logo */
+.navbar-brand {
+  margin-right: auto; /* Alinea el logo a la izquierda */
+  color: @primary-color;
+  &:hover {
+    color: @secondary-color; /* Color de las letras */
+    border-bottom: 2px solid @primary-color; /* Difuminado en el borde inferior al pasar el cursor */
+  }
+}
+
+/* Estilos de los enlaces del menú */
+.nav-link {
+  color: @primary-color; /* Color de las letras */
+  border-bottom: 2px solid transparent; /* Borde inferior transparente */
+  &:hover {
+    color: @secondary-color; /* Color de las letras */
+    border-bottom: 2px solid @primary-color; /* Difuminado en el borde inferior al pasar el cursor */
+  }
+}
+
+/* Botón del menú para móvil */
+.custom-toggler {
+  // Borde del menu en el móvil
+  .navbar-toggler {
+    border-color: @primary-color;
+  }
+  // Cambiar el color de las lineas del menú en el móvil
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 128, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}
+  
