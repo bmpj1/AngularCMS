@@ -1,13 +1,12 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DropdownOption, DropdownSettings } from 'src/app/components/dropdown/dropdown.module';
-import { Widget, DefaultWidgetDropdownSettings } from './widget.module';
+import { Widget, DefaultWidgetDropdownSettings, DefaultWidget, DefaultWidgets } from './widget.module';
 
 
 @Component({
   selector: 'app-widget',
   templateUrl: './widget.component.html',
   styleUrls: ['./widget.component.less'],
-  inputs: ['title', 'parents', 'childs'] // add input property here
 })
 
 export class WidgetComponent implements OnInit {
@@ -16,11 +15,10 @@ export class WidgetComponent implements OnInit {
   widgets: Widget[] = [];
   
   constructor() {
+    this.widgets = [];
+    this.dropdownSettings = DefaultWidgetDropdownSettings;
   }
   ngOnInit(): void {
-    this.widgets = [];
-
-    this.dropdownSettings = DefaultWidgetDropdownSettings;
   }
 
   onOptionSelected(event: DropdownOption) {
@@ -35,12 +33,13 @@ export class WidgetComponent implements OnInit {
       id: option.value + '-' + Math.random().toString(36).substring(2),
       label: option.label,
       title: option.value,
-      parents: [],
+      parents: DefaultWidgets,
       childs: [],
       name: option.value,
       component: WidgetComponent
     };
     
+    console.log(this);
     console.log(widget);
     this.widgets.push(widget);
   }

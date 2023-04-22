@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BreadcrumbItem } from './BreadcrumbItem';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.less']
 })
-export class BreadcrumbComponent {
+export class BreadcrumbComponent implements OnInit {
   home: string = "/";
   items: BreadcrumbItem[] = [];
   currentRoute: string = "";
@@ -19,8 +19,6 @@ export class BreadcrumbComponent {
   }
 
   ngOnInit(): void {
-    
-
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
       

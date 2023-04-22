@@ -48,7 +48,7 @@ import { TextareaWidgetComponent } from './widgets/textarea-widget/textarea-widg
     UserListComponent,
     UserDetailComponent,
     NotFoundComponent,
-    DropdownComponent,
+    DropdownComponent
   ],
   imports: [
     CommonModule,

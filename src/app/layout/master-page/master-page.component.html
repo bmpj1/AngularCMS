@@ -1,21 +1,27 @@
 <!-- Encabezado -->
 <app-header></app-header>
 
-
+<!-- Contenedor principal -->
 <div class="container-fluid">
   <div class="row">
 
     <!-- Barra lateral izquierda -->
-    <app-sidebar class="col-12 col-md-1 pt-3 pb-3 sidebar-bg"></app-sidebar>
+    <div class="col-12 col-md-1 pt-3 pb-3 sidebar-bg">
+      <app-sidebar *ngIf="showSidebar[0]"></app-sidebar>
+    </div>
 
     <!-- Contenido principal -->
     <main class="col-12 col-md-10 pt-3 pb-3">
+      <!-- Miga de pan -->
       <app-breadcrumb></app-breadcrumb>
-      <router-outlet></router-outlet>
+      <!-- Área de contenido -->
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
     </main>
 
     <!-- Barra lateral derecha -->
-    <app-sidebar class="col-12 col-md-1 pt-3 pb-3 sidebar-bg"></app-sidebar>
+    <div class="col-12 col-md-1 pt-3 pb-3 sidebar-bg">
+      <app-sidebar *ngIf="showSidebar[1]"></app-sidebar>
+    </div>
 
   </div>
 </div>

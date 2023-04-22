@@ -1,5 +1,5 @@
-import { DefaultWidget, Widget } from './../widget/widget.module';
-import { Component, Input, OnInit, Injector } from '@angular/core';
+import { Component, Input, OnInit, Injector, Output, EventEmitter } from '@angular/core';
+import { DefaultWidget, Widget } from '../widget/widget.module';
 
 @Component({
   selector: 'app-widget-wrapper',
@@ -8,21 +8,28 @@ import { Component, Input, OnInit, Injector } from '@angular/core';
 })
 
 export class WidgetWrapperComponent implements OnInit {
-  Injector!: Injector;
   // Declare a property for the WidgetComponent class
   @Input() widget!: Widget;
   widgetData!: Widget;
+  @Output() outWidgetEvent = new EventEmitter<Widget>();
   
-  constructor(injector: Injector) {
-    this.Injector = Injector.create({providers: [], parent: injector});
+  constructor() {
     this.widgetData = DefaultWidget;
     console.log(this.widgetData);
   }
 
   ngOnInit(): void {
-    console.log(this.widget);
+    console.log(this.widgetData);
     // Inicializar la propiedad component para permitir inyectar el component en el widget:
     this.widgetData = this.widget;
     // Crear el component de widget a inyectar
+    
+    this.onWidgetInit();
+    console.log(this.widgetData);
+    this.outWidgetEvent.emit(this.getWidgetData());
   }
+  
+  getWidgetData(): Widget | undefined { return this.widgetData; }
+
+  onWidgetInit() { }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DefaultDropdownSettings, DropdownOption, DropdownOutput, DropdownSettings } from './dropdown.module';
 
 @Component({
@@ -6,7 +6,7 @@ import { DefaultDropdownSettings, DropdownOption, DropdownOutput, DropdownSettin
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.less']
 })
-export class DropdownComponent  {
+export class DropdownComponent implements OnInit {
   showDropdown = false;
   searchTerm = '';
   
@@ -16,6 +16,9 @@ export class DropdownComponent  {
   constructor() {
     this.settings = DefaultDropdownSettings;
     this.optionSelected = new EventEmitter<DropdownOutput>();
+  }
+  ngOnInit(): void {
+    
   }
 
   selectOption(option: DropdownOption) {

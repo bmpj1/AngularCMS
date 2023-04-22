@@ -1,7 +1,10 @@
 <app-widget class="widget-add-bg" *ngIf="widgets.length != 0"></app-widget>
 
-<div class="widget-add-bg" [ngSwitch]="widgets.length">
-  <app-dropdown *ngIf="widgets.length == 0" [settings]="dropdownSettings" (optionSelected)="onOptionSelected($event.option)"></app-dropdown>
+<div class="widget-container-bg">
+  <div class="widget-add-bg">
+    <app-dropdown *ngIf="widgets.length == 0" [settings]="dropdownSettings" (optionSelected)="onOptionSelected($event.option)"></app-dropdown>
+  </div>
+  
   <div class="widget-container-bg" *ngFor="let widget of widgets">
     <app-widget-wrapper [widget]="widget"></app-widget-wrapper>
   </div>

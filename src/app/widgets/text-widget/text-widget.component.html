@@ -1,1 +1,30 @@
-<p>text-widget works!</p>
+<div class="note-editor note-frame card">
+  <div class="note-dropzone">
+    <div class="note-dropzone-message"></div>
+  </div>
+  <!-- aquí van los botones de la barra de herramientas -->
+  <div class="note-toolbar card-header" role="toolbar">
+    <div class="note-btn-group btn-group note-style">
+      <button type="button" class="note-btn btn btn-light btn-sm" (click)="bold()" tabindex="-1" title="" aria-label="Bold (CTRL+B)" data-original-title="Bold (CTRL+B)">
+        <i class="fa-solid fa-bold"></i>
+      </button>
+    </div>
+    <div class="note-btn-group btn-group note-style">
+      <button type="button" class="note-btn btn btn-light btn-sm" (click)="italic()" tabindex="-1" title="" aria-label="Italic (CTRL+I)" data-original-title="Italic (CTRL+I)">
+        <i class="fa-solid fa-italic"></i>
+      </button>
+    </div>
+    <div class="note-btn-group btn-group note-style">
+      <button type="button" class="note-btn btn btn-light btn-sm" (click)="underline()" tabindex="-1" title="" aria-label="Underline (CTRL+U)" data-original-title="Underline (CTRL+B)">
+        <i class="fa-solid fa-underline"></i>
+      </button>
+    </div>
+    
+  </div>
+
+  <div class="note-editing-area">
+    <div class="note-editable card-block" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="true" autocorrect="true">
+      text widgets works!
+    </div>
+  </div>
+</div>

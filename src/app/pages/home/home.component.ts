@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { BreadcrumbItem } from 'src/app/components/breadcrumb/BreadcrumbItem';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { PageComponent } from '../page/page.component';
 
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.less']
 })
-export class HomeComponent {
-  breadcrumbItems: BreadcrumbItem[] = [];
-  currentUrl: string = '';
-
-  constructor(private router: Router) { 
-    this.currentUrl = this.router.url;
-
-    // Crea un array de BreadcrumbItem con los elementos necesarios
-    this.breadcrumbItems = [
-      { text: 'Home', link: '/' },
-      { text: 'Current Page', link: this.currentUrl }
-    ];
+// EXTENDEMOS la clase base PageComponent para reutilizar su código en todas los componentes tipo página
+export class HomeComponent extends PageComponent {
+  constructor() {
+    super();
+    this.showSidebar = [true, true];
+  }
+  
+  override onPageInit(): void {
+    console.log(this.showSidebar);
   }
 }
